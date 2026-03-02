@@ -3,249 +3,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über Vaelo AI</title>
-    <meta name="description" content="Erfahren Sie mehr über Vaelo AI – Ihre intelligente KI für kreative Ideen, Wissen und mehr.">
+    <title>Vaelo AI | Die Zukunft der Intelligenz</title>
+    <meta name="description" content="Vaelo AI – Kreativität, Wissen und Effizienz vereint in einer eleganten KI-Plattform.">
     <link rel="icon" href="https://lh3.googleusercontent.com/u/0/d/13UK7qNSLeyCp-DrSO895B5jM6XjpKJmf">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #4285f4;
-            --secondary-color: #9b72cb;
-            --accent-green: #00ff88;
-            --bg-light: #f8f9fa;
-            --bg-dark: #0b0b0c;
-            --text-main: #202124;
-            --text-light: #5f6368;
-            --gradient: linear-gradient(135deg, #4285f4, #9b72cb, #d96570, #4285f4);
+            --primary: #6366f1; /* Modern Indigo */
+            --secondary: #a855f7; /* Vibrant Purple */
+            --accent: #22d3ee; /* Cyan */
+            --bg-dark: #030712;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-main: #f3f4f6;
+            --text-dim: #9ca3af;
+            --glass: rgba(15, 23, 42, 0.8);
         }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: var(--bg-light);
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-dark);
             color: var(--text-main);
+            overflow-x: hidden;
             line-height: 1.6;
         }
+
+        /* Hintergrund-Animation */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
+        }
+
+        /* Header / Nav */
         header {
-            background: white;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
+
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 16px 24px;
+            padding: 1rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        .logo {
-            height: 40px;
-            width: auto;
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
         }
+
+        .logo {
+            height: 32px;
+            border-radius: 8px;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
-            gap: 24px;
+            gap: 32px;
             margin: 0;
             padding: 0;
         }
+
         nav a {
             text-decoration: none;
-            color: var(--text-main);
+            color: var(--text-dim);
             font-weight: 500;
-            transition: color 0.2s;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
+
         nav a:hover {
-            color: var(--primary-color);
+            color: var(--primary);
         }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(to bottom, white, var(--bg-light));
+            padding: 120px 24px 80px;
             text-align: center;
-            padding: 80px 24px;
+            position: relative;
         }
+
         .hero h1 {
-            font-size: 48px;
-            margin: 0 0 16px;
-            background: var(--gradient);
-            background-size: 200% auto;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin: 0 0 24px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #fff 30%, var(--primary) 70%, var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: gradientFlow 5s linear infinite;
         }
-        @keyframes gradientFlow {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
+
         .hero p {
-            font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto 32px;
-            color: var(--text-light);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-dim);
+            font-weight: 300;
         }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .cta-btn {
-            background: var(--primary-color);
+            background: var(--primary);
             color: white;
-            padding: 12px 32px;
-            border-radius: 30px;
+            padding: 14px 36px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
         }
+
         .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(66,133,244,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.6);
         }
+
+        .cta-secondary {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color);
+            color: white;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Features Section */
         section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 64px 24px;
+            padding: 100px 24px;
         }
-        h2 {
-            font-size: 36px;
-            margin-bottom: 32px;
+
+        .section-tag {
+            display: block;
             text-align: center;
-            color: var(--primary-color);
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
         }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 700;
+        }
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
         }
+
         .feature-card {
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
         .feature-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
+            border-color: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
         }
+
         .feature-icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 16px;
-            fill: var(--accent-green);
+            width: 54px;
+            height: 54px;
+            margin-bottom: 24px;
+            padding: 12px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 14px;
+            fill: var(--primary);
         }
+
         .feature-card h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
+
         .feature-card p {
-            color: var(--text-light);
+            color: var(--text-dim);
+            font-size: 1rem;
+            margin: 0;
         }
+
+        /* Safety Section */
         .safety-section {
-            background: #f0f4f8;
+            margin-top: 40px;
+            border-radius: 40px;
+            background: linear-gradient(rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));
+            border: 1px solid var(--border-color);
             text-align: center;
         }
+
         .safety-content {
-            max-width: 800px;
+            max-width: 750px;
             margin: 0 auto;
         }
+
+        /* Footer */
         footer {
-            background: #202124;
-            color: #bdc1c6;
-            padding: 32px 24px;
-            text-align: center;
+            padding: 80px 24px 40px;
+            border-top: 1px solid var(--border-color);
+            background: #000;
         }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         footer a {
-            color: #bdc1c6;
+            color: var(--text-dim);
             text-decoration: none;
-            margin: 0 12px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
         }
+
         footer a:hover {
             color: white;
         }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
+
+        /* Animation für das Erscheinen beim Scrollen */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
-            h2 { font-size: 28px; }
-            .features-grid { grid-template-columns: 1fr; }
+            nav { display: none; } /* Vereinfacht für Mobile */
+            .hero { padding-top: 80px; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
+    <div class="bg-glow"></div>
+
     <header>
         <div class="header-container">
-            <img src="https://lh3.googleusercontent.com/u/0/d/13UK7qNSLeyCp-DrSO895B5jM6XjpKJmf" alt="Vaelo AI Logo" class="logo">
+            <a href="#" class="logo-area">
+                <img src="https://lh3.googleusercontent.com/u/0/d/13UK7qNSLeyCp-DrSO895B5jM6XjpKJmf" alt="Vaelo AI" class="logo">
+                <span>Vaelo AI</span>
+            </a>
             <nav>
                 <ul>
                     <li><a href="#features">Funktionen</a></li>
                     <li><a href="#safety">Sicherheit</a></li>
                     <li><a href="https://ki-assistent-alpha.vercel.app/richtlinien.html">Rechtliches</a></li>
-                    <li><a href="https://ki-assistent-alpha.vercel.app/">Zur KI</a></li>
                 </ul>
             </nav>
+            <a href="https://ki-assistent-alpha.vercel.app/" class="cta-btn" style="padding: 10px 20px; font-size: 0.9rem;">App öffnen</a>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Vaelo AI – Dein intelligenter Begleiter</h1>
-            <p>Vaelo AI ist eine fortschrittliche KI-Plattform, die dir hilft, kreative Ideen umzusetzen, Wissen zu erlangen und alltägliche Aufgaben zu vereinfachen. Inspiriert von modernen KI-Systemen wie Gemini, bietet Vaelo eine intuitive und sichere Erfahrung.</p>
-            <a href="https://ki-assistent-alpha.vercel.app/" class="cta-btn">Vaelo AI ausprobieren</a>
+            <h1>Intelligenz neu <br>definiert.</h1>
+            <p>Vaelo AI kombiniert modernste Sprachmodelle mit einer intuitiven Oberfläche, um deine Produktivität und Kreativität auf das nächste Level zu heben.</p>
+            <div class="cta-group">
+                <a href="https://ki-assistent-alpha.vercel.app/" class="cta-btn">Kostenlos starten</a>
+                <a href="#features" class="cta-btn cta-secondary">Funktionen entdecken</a>
+            </div>
         </section>
 
-        <section id="features">
-            <h2>Funktionen von Vaelo AI</h2>
+        <section id="features" class="reveal">
+            <span class="section-tag">Capabilities</span>
+            <h2>Das kann Vaelo AI</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-                    <h3>Chat-Modi</h3>
-                    <p>Wähle zwischen normalem Chat und privatem Modus. Im privaten Modus werden keine Daten gespeichert.</p>
-                </div>
-                <div class="feature-card">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                    <h3>KI-Modelle</h3>
-                    <p>Verwende verschiedene Modelle: Fast für schnelle Antworten, Thinking für detaillierte Überlegungen und Pro für maximale Tiefe.</p>
+                    <h3>Drei Denk-Modi</h3>
+                    <p><b>Fast</b> für Speed, <b>Thinking</b> für Logik und <b>Pro</b> für komplexe Analysen. Du hast die Wahl.</p>
                 </div>
                 <div class="feature-card">
-                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
-                    <h3>Live-Modus</h3>
-                    <p>Sprich direkt mit Vaelo über Mikrofon. Die KI hört zu, verarbeitet und antwortet in Echtzeit.</p>
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+                    <h3>Live Voice</h3>
+                    <p>Interagiere in Echtzeit per Sprache. Vaelo hört zu und antwortet natürlich, ganz ohne Tippen.</p>
                 </div>
                 <div class="feature-card">
-                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93-2.67-1.14-5-4.43-5-7.93V7.18L12 5z"/></svg>
-                    <h3>Wetter-Integration</h3>
-                    <p>Erhalte aktuelle Wetterdaten direkt in deinem Dashboard, inklusive Temperatur, Feuchtigkeit und Windgeschwindigkeit.</p>
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+                    <h3>Private Modus</h3>
+                    <p>Maximale Diskretion. Deine Gespräche werden nicht gespeichert und verlassen nicht den temporären Speicher.</p>
                 </div>
                 <div class="feature-card">
-                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>
-                    <h3>Chat-Export</h3>
-                    <p>Exportiere deine Chats in TXT, HTML oder Markdown-Format für einfache Archivierung.</p>
-                </div>
-                <div class="feature-card">
-                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
-                    <h3>Schnellzugriffe</h3>
-                    <p>Starte Gespräche mit vorgefertigten Ideen wie kreatives Schreiben, Lernen, Programmieren oder Reiseplanung.</p>
-                </div>
-                <div class="feature-card">
-                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-                    <h3>Datenschutz</h3>
-                    <p>Deine Chats bleiben lokal oder werden sicher synchronisiert. Keine unbefugten Zugriffe.</p>
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                    <h3>Smart Tools</h3>
+                    <p>Integrierte Wetterdaten, Code-Highlighting und Export-Funktionen (Markdown/HTML) direkt im Chat.</p>
                 </div>
             </div>
         </section>
 
-        <section id="safety" class="safety-section">
-            <h2>Sicherheit und Verantwortung</h2>
+        <section id="safety" class="safety-section reveal">
             <div class="safety-content">
-                <p>Vaelo AI ist so gestaltet, dass es sicher und ethisch ist. Wir verwenden fortschrittliche Filter, um schädliche Inhalte zu vermeiden. Deine Daten werden nur mit deiner Zustimmung gespeichert.</p>
-                <p>Für detaillierte Richtlinien, siehe unser <a href="https://ki-assistent-alpha.vercel.app/richtlinien.html" style="color: var(--primary-color); text-decoration: underline;">Rechtliches</a>.</p>
+                <span class="section-tag">Ethik & Sicherheit</span>
+                <h2>Verantwortungsvolle KI</h2>
+                <p>Sicherheit ist bei Vaelo AI kein nachträglicher Gedanke, sondern das Fundament. Wir nutzen modernste Filtertechnologien und garantieren volle Datentransparenz.</p>
+                <a href="https://ki-assistent-alpha.vercel.app/richtlinien.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Lies unsere Sicherheitsrichtlinien →</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Vaelo AI. Alle Rechte vorbehalten.</p>
-        <div>
-            <a href="https://ki-assistent-alpha.vercel.app/richtlinien.html">Datenschutz</a>
-            <a href="https://ki-assistent-alpha.vercel.app/richtlinien.html">Nutzungsbedingungen</a>
-            <a href="https://ki-assistent-alpha.vercel.app/">Zur App</a>
+        <div class="footer-content">
+            <a href="#" class="logo-area">
+                <img src="https://lh3.googleusercontent.com/u/0/d/13UK7qNSLeyCp-DrSO895B5jM6XjpKJmf" alt="Vaelo AI" class="logo">
+                <span style="color: white">Vaelo AI</span>
+            </a>
+            <div class="footer-links">
+                <a href="https://ki-assistent-alpha.vercel.app/richtlinien.html">Datenschutz</a>
+                <a href="https://ki-assistent-alpha.vercel.app/richtlinien.html">Impressum</a>
+                <a href="https://ki-assistent-alpha.vercel.app/">App starten</a>
+            </div>
+            <p class="copyright">© 2026 Vaelo AI. Crafted for the next generation.</p>
         </div>
     </footer>
+
+    <script>
+        // Einfacher Scroll-Reveal Effekt
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Initialer Check
+        reveal();
+    </script>
 </body>
 </html>
