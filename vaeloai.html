@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über Vaelo AI</title>
+    <meta name="description" content="Erfahren Sie mehr über Vaelo AI – Ihre intelligente KI für kreative Ideen, Wissen und mehr.">
+    <link rel="icon" href="https://lh3.googleusercontent.com/u/0/d/13UK7qNSLeyCp-DrSO895B5jM6XjpKJmf">
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #9b72cb;
+            --accent-green: #00ff88;
+            --bg-light: #f8f9fa;
+            --bg-dark: #0b0b0c;
+            --text-main: #202124;
+            --text-light: #5f6368;
+            --gradient: linear-gradient(135deg, #4285f4, #9b72cb, #d96570, #4285f4);
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        .hero {
+            background: linear-gradient(to bottom, white, var(--bg-light));
+            text-align: center;
+            padding: 80px 24px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0 0 16px;
+            background: var(--gradient);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 5s linear infinite;
+        }
+        @keyframes gradientFlow {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 32px;
+            color: var(--text-light);
+        }
+        .cta-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(66,133,244,0.3);
+        }
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+        h2 {
+            font-size: 36px;
+            margin-bottom: 32px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+            fill: var(--accent-green);
+        }
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .feature-card p {
+            color: var(--text-light);
+        }
+        .safety-section {
+            background: #f0f4f8;
+            text-align: center;
+        }
+        .safety-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        footer {
+            background: #202124;
+            color: #bdc1c6;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        footer a {
+            color: #bdc1c6;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        footer a:hover {
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            h2 { font-size: 28px; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="https://lh3.googleusercontent.com/u/0/d/13UK7qNSLeyCp-DrSO895B5jM6XjpKJmf" alt="Vaelo AI Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#features">Funktionen</a></li>
+                    <li><a href="#safety">Sicherheit</a></li>
+                    <li><a href="https://ki-assistent-alpha.vercel.app/richtlinien.html">Rechtliches</a></li>
+                    <li><a href="https://ki-assistent-alpha.vercel.app/">Zur KI</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Vaelo AI – Dein intelligenter Begleiter</h1>
+            <p>Vaelo AI ist eine fortschrittliche KI-Plattform, die dir hilft, kreative Ideen umzusetzen, Wissen zu erlangen und alltägliche Aufgaben zu vereinfachen. Inspiriert von modernen KI-Systemen wie Gemini, bietet Vaelo eine intuitive und sichere Erfahrung.</p>
+            <a href="https://ki-assistent-alpha.vercel.app/" class="cta-btn">Vaelo AI ausprobieren</a>
+        </section>
+
+        <section id="features">
+            <h2>Funktionen von Vaelo AI</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                    <h3>Chat-Modi</h3>
+                    <p>Wähle zwischen normalem Chat und privatem Modus. Im privaten Modus werden keine Daten gespeichert.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    <h3>KI-Modelle</h3>
+                    <p>Verwende verschiedene Modelle: Fast für schnelle Antworten, Thinking für detaillierte Überlegungen und Pro für maximale Tiefe.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+                    <h3>Live-Modus</h3>
+                    <p>Sprich direkt mit Vaelo über Mikrofon. Die KI hört zu, verarbeitet und antwortet in Echtzeit.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.5-2.33 6.79-5 7.93-2.67-1.14-5-4.43-5-7.93V7.18L12 5z"/></svg>
+                    <h3>Wetter-Integration</h3>
+                    <p>Erhalte aktuelle Wetterdaten direkt in deinem Dashboard, inklusive Temperatur, Feuchtigkeit und Windgeschwindigkeit.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>
+                    <h3>Chat-Export</h3>
+                    <p>Exportiere deine Chats in TXT, HTML oder Markdown-Format für einfache Archivierung.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                    <h3>Schnellzugriffe</h3>
+                    <p>Starte Gespräche mit vorgefertigten Ideen wie kreatives Schreiben, Lernen, Programmieren oder Reiseplanung.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                    <h3>Datenschutz</h3>
+                    <p>Deine Chats bleiben lokal oder werden sicher synchronisiert. Keine unbefugten Zugriffe.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="safety" class="safety-section">
+            <h2>Sicherheit und Verantwortung</h2>
+            <div class="safety-content">
+                <p>Vaelo AI ist so gestaltet, dass es sicher und ethisch ist. Wir verwenden fortschrittliche Filter, um schädliche Inhalte zu vermeiden. Deine Daten werden nur mit deiner Zustimmung gespeichert.</p>
+                <p>Für detaillierte Richtlinien, siehe unser <a href="https://ki-assistent-alpha.vercel.app/richtlinien.html" style="color: var(--primary-color); text-decoration: underline;">Rechtliches</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Vaelo AI. Alle Rechte vorbehalten.</p>
+        <div>
+            <a href="https://ki-assistent-alpha.vercel.app/richtlinien.html">Datenschutz</a>
+            <a href="https://ki-assistent-alpha.vercel.app/richtlinien.html">Nutzungsbedingungen</a>
+            <a href="https://ki-assistent-alpha.vercel.app/">Zur App</a>
+        </div>
+    </footer>
+</body>
+</html>
